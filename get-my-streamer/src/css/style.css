@@ -1,0 +1,44 @@
+body{
+    background-color: rgb(145, 115, 173);
+}
+
+.app-container{
+    width: 40vw;
+    margin: 0 auto;
+    background-color: rgba(39, 32, 41, 0.671);
+    border-radius: 10px;
+    padding: 10px;
+    height: 90vh;
+}
+
+form{
+    display: grid;
+    margin: 20px auto;
+    justify-content: center;
+    align-items: center;
+
+}
+
+form input{
+    background-color: rgba(105, 104, 104, 0.787);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+form button{
+    background-color: rgb(115, 7, 148);
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.avatarImage{
+    border: solid 10px rgb(115, 7, 148);
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    display: block;
+}
