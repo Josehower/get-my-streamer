@@ -1,14 +1,17 @@
+@import "./variables.scss";
+
 body{
-    background-color: rgb(145, 115, 173);
+    background-color: var(--purple-dark);
 }
 
 .app-container{
     width: 40vw;
-    margin: 0 auto;
-    background-color: rgba(39, 32, 41, 0.671);
+    margin: 15vh auto;
+    background-color:  var(--black);
     border-radius: 10px;
     padding: 10px;
-    height: 90vh;
+    min-height: 400px;
+
 }
 
 form{
@@ -20,25 +23,27 @@ form{
 }
 
 form input{
-    background-color: rgba(105, 104, 104, 0.787);
-    color: white;
+    background-color: #7e7394;
+    color:var(--white);
+    padding: 5px;
     border: none;
     border-radius: 5px;
     margin: 10px 0;
 }
 
 form button{
-    background-color: rgb(115, 7, 148);
+    background-color: var(--purple-dark);
+    padding: 10px;
     color: white;
     border: none;
     border-radius: 5px;
 }
 
 .avatarImage{
-    border: solid 10px rgb(115, 7, 148);
+    border: solid 10px var(--purple-light);
     border-radius: 50%;
-    width: 200px;
-    height: 200px;
-    margin: 20px auto;
+    max-width: 200px;
+    max-height: 200px;
+    margin: 40px auto;
     display: block;
 }

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import '../css/login.scss';
 
 function Login (props) {
 
@@ -12,7 +13,7 @@ function Login (props) {
     }
 
     return ( 
-     <button onClick={getUserToken}>Log in to Twitch</button>
+     <button id="twitch_login" onClick={getUserToken}>Log in to Twitch</button>
     )
 
 }

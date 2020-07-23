@@ -2,7 +2,7 @@ import React, { Component, useState, useEffect, useCallback, useRef } from 'reac
 import { render } from 'react-dom';
 import Cuadro from './components/Cuadro'
 import ProfileImg from './components/profileImg'
-import './css/style.css';
+import './css/style.scss';
 
 function Square (){
 

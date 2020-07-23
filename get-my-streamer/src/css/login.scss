@@ -1,0 +1,16 @@
+@import "./variables.scss";
+
+
+#twitch_login{
+
+    background-color: var(--purple-dark);
+    color: var(--white);
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    width: 80%;
+    display: block;
+    margin: 150px auto;
+    
+}
+
