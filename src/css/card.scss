@@ -1,0 +1,16 @@
+@import './variables.scss';
+
+.streamer-card {
+    background-color: rgb(83, 64, 64);
+    max-height: 80vh;
+    min-height: 50vh;
+
+    .avatarImage {
+        width: 30%;
+        border-width: 5px;
+    }
+
+    h1 {
+        margin: 0;
+    }
+}
