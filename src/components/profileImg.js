@@ -1,10 +1,9 @@
-import React from 'react'
+import React from 'react';
 
-
-function ProfileImg (props){
-
- return ( <img className="avatarImage" src={props.streamerImg} alt="my streamer avatar"/> )
-
+function ProfileImg({ streamerImg }) {
+  return (
+    <img className="avatarImage" src={streamerImg} alt="my streamer avatar" />
+  );
 }
 
-export default ProfileImg
+export default ProfileImg;
