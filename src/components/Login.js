@@ -11,7 +11,7 @@ function Login(props) {
    );
 
    return (
-      <div className="side-bar-container">
+      <div id="side-bar-container">
          <TwitchButton />
       </div>
    );

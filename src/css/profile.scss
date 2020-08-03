@@ -1,0 +1,104 @@
+@import './variables.scss';
+
+
+
+form {
+  display: grid;
+  margin: 20px auto;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+input:hover + ul,
+input:focus + ul {
+  display: block;
+  opacity: 1;
+}
+
+form input {
+  background-color: #7e7394;
+  color: var(--white);
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+form button {
+  background-color: var(--purple-dark);
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+#profile-wrapper{
+  display: grid;
+  justify-items: center;
+  color: var(--white);
+  grid-template-rows: 3.5rem 1fr 2rem  1fr 3rem;
+}
+
+.avatarImage {
+  border: solid 10px var(--purple-light);
+  border-radius: 50%;
+  max-width: 200px;
+  max-height: 200px;
+  margin: 40px auto;
+  display: block;
+}
+
+
+
+.search-history {
+  background-color: #7e7394;
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  margin: 0;
+  list-style: none;
+  text-align: left;
+  position: relative;
+  display: grid;
+  padding: 0;
+  opacity: 0;
+  display: none;
+}
+
+.search-history:hover {
+  display: block;
+  opacity: 1;
+}
+
+.search-history li {
+  padding-left: 5px;
+}
+
+.search-history li:hover {
+  background-color: var(--purple-dark);
+  cursor: pointer;
+}
+
+.input-wrapper {
+  height: 50px;
+}
+
+a{
+  color: white;
+  display: block;
+  text-align: center;
+}
+
+.profile-description {
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.add-fav{
+  display: block;
+  margin-top: 20px;
+}

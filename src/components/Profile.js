@@ -1,22 +1,23 @@
 import React, { useState } from 'react';
 import ProfileImg from './ProfileImg';
+import '../css/profile.scss';
 
 function Profile({ streamer, request, addFav, streamerHistory }) {
    const [inputValue, setInputValue] = useState('');
 
-   const autoComplete = sugerencia => {
-      console.log(sugerencia);
-      setInputValue(sugerencia);
+   const autoComplete = searchHistory => {
+      console.log(searchHistory);
+      setInputValue(searchHistory);
    };
 
    const getStreamerList = () => {
       if (inputValue === '') {
          return;
       }
-      const sugerencias = streamerHistory.filter(streamer =>
+      const searchHistory = streamerHistory.filter(streamer =>
          streamer.startsWith(inputValue)
       );
-      return sugerencias.map(sug => (
+      return searchHistory.map(sug => (
          <li onClick={() => autoComplete(sug)} key={sug}>
             {sug}
          </li>
@@ -24,7 +25,7 @@ function Profile({ streamer, request, addFav, streamerHistory }) {
    };
 
    return (
-      <div className="side-bar-container">
+      <div id="side-bar-container">
          <form onSubmit={e => request(e, inputValue)}>
             <div className="input-wrapper">
                <input
@@ -32,25 +33,27 @@ function Profile({ streamer, request, addFav, streamerHistory }) {
                   value={inputValue}
                   type="text"
                />
-               <ul className="sugerencia">{getStreamerList()}</ul>
+               <ul className="search-history">{getStreamerList()}</ul>
             </div>
             <button type="submit">Search your Streamer</button>
          </form>
-         <h1>{streamer ? streamer.login : ''} </h1>
-         <p>{streamer ? streamer.description : ''}</p>
-         <a
-            href={`https://twitch.tv/${streamer ? streamer.login : ''}`}
-            rel="noopener noreferrer"
-            target="_blank"
-         >
-            {streamer.login ? 'ver en twitch' : 'ir a Twitch'}
-         </a>
-         <ProfileImg streamer={streamer} />
-         {streamer.login ? (
-            <button type="submit" onClick={addFav}>
-               add to favorites
-            </button>
-         ) : null}
+         <div id="profile-wrapper">
+            <h1>{streamer ? streamer.login : ''} </h1>
+            <ProfileImg streamer={streamer} />
+            <a
+               href={`https://twitch.tv/${streamer ? streamer.login : ''}`}
+               rel="noopener noreferrer"
+               target="_blank"
+            >
+               {streamer.login ? 'ver en twitch' : 'ir a Twitch'}
+            </a>
+            <p className="profile-description">{streamer ? streamer.description : ''}</p>
+            {streamer.login ? (
+               <button className="add-fav" type="submit" onClick={addFav}>
+                  add to favorites
+               </button>
+            ) : null}
+         </div>
       </div>
    );
 }

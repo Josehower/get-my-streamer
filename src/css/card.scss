@@ -1,16 +1,80 @@
 @import './variables.scss';
 
 .streamer-card {
-    background-color: rgb(83, 64, 64);
+    background-color: var(--black);
+    color: var(--white);
     max-height: 80vh;
-    min-height: 50vh;
+    min-height: 45vh;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 40% 50px 4fr 1fr;
+    gap: 5px;
+    padding: 20px;
+    border-radius: 10px;
 
     .avatarImage {
         width: 30%;
         border-width: 5px;
+        grid-column: span 2;
+    }
+
+    .mark{
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+        width: 5rem;
+        padding: 5px;
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        border-radius: 5px;
+    }
+
+    .mark::after {
+        content: '';
+        width: 10px;
+        height: 10px;
+        z-index: 3;
+        align-self: center;
+        justify-self: center;
+        border-radius: 50%;
+        border: solid white 1px;
+
+    }
+
+    .online::after{
+        background-color: rgb(255, 1, 1);
+    }
+    .offline::after{
+        background-color: black;
+    }
+
+    .online{
+        background-color: rgba(241, 0, 0, 0.863);
+    }
+    
+    .offline{
+        background-color: rgb(110, 110, 110);
+
     }
 
     h1 {
         margin: 0;
+        justify-self: start;
+        align-self: center;
+        font-size: 25px;
+    }
+
+    p {
+        grid-column: span 2;
+    }
+
+    a{
+        background-color: var(--purple-dark);
+   color: var(--white);
+   text-align: center;
+   padding: 10px;
+   border-radius: 5px;
+   border: none;
+   display: block;
     }
 }

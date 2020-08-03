@@ -23,8 +23,11 @@ function Card({ streamer, token, remove }) {
 
    return (
       <div className="streamer-card">
-         <h1>{streamer.login}</h1>
          <ProfileImg streamer={streamer} />
+         <h1>{streamer.login}</h1>
+         <div className={isOnline ? 'mark online' : 'mark offline'}>
+            {isOnline ? 'Live' : 'Offline'}
+         </div>
          <p>{streamer.description}</p>
          <a
             href={`https://twitch.tv/${streamer.login}`}
@@ -33,7 +36,6 @@ function Card({ streamer, token, remove }) {
          >
             ver en Twitch
          </a>
-         <div>{isOnline ? 'Live Now' : 'Offline'}</div>
          <button onClick={() => remove(streamer.login)}>remove</button>
       </div>
    );
