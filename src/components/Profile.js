@@ -1,14 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { db } from '../fBase';
 import ProfileImg from './ProfileImg';
 import '../css/profile.scss';
 
-function Profile({ streamer, request, addFav, streamerHistory }) {
+function Profile({
+   streamer,
+   request,
+   addFav,
+   streamerHistory,
+   userId,
+   favList,
+   logOut,
+}) {
    const [inputValue, setInputValue] = useState('');
 
    const autoComplete = searchHistory => {
       console.log(searchHistory);
       setInputValue(searchHistory);
    };
+
+   useEffect(() => {
+      request();
+   }, [request]);
+
+   useEffect(() => {
+      if (userId && Number(favList) !== 0) {
+         const dbRef = db.ref(`${userId}`);
+         dbRef.set({ favList });
+         let msge;
+         dbRef.on('value', snapshot => (msge = snapshot.val()));
+         console.log(msge);
+      }
+   }, [favList, userId]);
 
    const getStreamerList = () => {
       if (inputValue === '') {
@@ -26,7 +49,13 @@ function Profile({ streamer, request, addFav, streamerHistory }) {
 
    return (
       <div id="side-bar-container">
-         <form onSubmit={e => request(e, inputValue)}>
+         <div class="logout-bar">
+            <button onClick={logOut} className="log-out">
+               logout
+            </button>
+            <span className="userId">{userId}</span>
+         </div>
+         <form onSubmit={e => request(e, inputValue, true)}>
             <div className="input-wrapper">
                <input
                   onChange={e => setInputValue(e.target.value)}
@@ -35,7 +64,7 @@ function Profile({ streamer, request, addFav, streamerHistory }) {
                />
                <ul className="search-history">{getStreamerList()}</ul>
             </div>
-            <button type="submit">Search your Streamer</button>
+            <button type="submit">Search</button>
          </form>
          <div id="profile-wrapper">
             <h1>{streamer ? streamer.login : ''} </h1>

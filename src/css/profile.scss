@@ -1,104 +1,177 @@
 @import './variables.scss';
 
-
+h1 {
+   margin: 0;
+}
 
 form {
-  display: grid;
-  margin: 20px auto;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+   display: grid;
+   grid-template-columns: 2fr 1fr;
+   margin: 20px auto;
+   position: relative;
+   gap: 1rem;
 }
 
 input:hover + ul,
 input:focus + ul {
-  display: block;
-  opacity: 1;
+   display: block;
+   opacity: 1;
 }
 
 form input {
-  background-color: #7e7394;
-  color: var(--white);
-  padding: 5px;
-  border: none;
-  border-radius: 5px;
-  margin-top: 10px;
+   background-color: #7e7394;
+   color: var(--white);
+   padding: 5px;
+   width: 100%;
+   height: 100%;
+   border: none;
+   border-radius: 5px;
 }
 
 form button {
-  background-color: var(--purple-dark);
-  padding: 10px;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  margin-top: 5px;
+   background-color: var(--purple-dark);
+   padding: 5px;
+   color: white;
+   border: 1px solid transparent;
+   border-radius: 5px;
+   height: 1.5rem;
+   align-self: center;
 }
 
-#profile-wrapper{
-  display: grid;
-  justify-items: center;
-  color: var(--white);
-  grid-template-rows: 3.5rem 1fr 2rem  1fr 3rem;
+form button:hover {
+   background-color: var(--black);
+   color: var(--white);
+   border: 1px solid var(--white);
+}
+
+#profile-wrapper {
+   display: grid;
+   justify-items: center;
+   color: var(--white);
+   grid-template-rows: 3.5rem 1fr 2rem 220px 3rem;
+   height: 70vh;
+
+   p {
+      overflow: scroll;
+      height: 160px;
+   }
 }
 
 .avatarImage {
-  border: solid 10px var(--purple-light);
-  border-radius: 50%;
-  max-width: 200px;
-  max-height: 200px;
-  margin: 40px auto;
-  display: block;
+   border: solid 10px var(--purple-light);
+   border-radius: 50%;
+   max-width: 9rem;
+   max-height: 9rem;
+   margin: 40px auto;
+   display: block;
 }
 
-
-
 .search-history {
-  background-color: #7e7394;
-  color: var(--white);
-  border: none;
-  border-radius: 5px;
-  margin: 0;
-  list-style: none;
-  text-align: left;
-  position: relative;
-  display: grid;
-  padding: 0;
-  opacity: 0;
-  display: none;
+   color: var(--white);
+   border: none;
+   border-radius: 5px;
+   margin: 0;
+   list-style: none;
+   text-align: left;
+   position: relative;
+   display: grid;
+   padding: 0;
+   opacity: 0;
+   display: none;
+   margin-top: 1px;
 }
 
 .search-history:hover {
-  display: block;
-  opacity: 1;
+   display: block;
+   opacity: 1;
 }
 
 .search-history li {
-  padding-left: 5px;
+   background-color: #7e7394;
+   padding-left: 5px;
+   border-bottom: 1px var(--black) solid;
+   border-radius: 5px;
 }
 
 .search-history li:hover {
-  background-color: var(--purple-dark);
-  cursor: pointer;
+   background-color: var(--purple-dark);
+   cursor: pointer;
+   border-radius: 5px;
 }
 
 .input-wrapper {
-  height: 50px;
+   height: 1.5rem;
+   overflow: visible;
+   align-self: center;
 }
 
-a{
-  color: white;
-  display: block;
-  text-align: center;
+a {
+   color: white;
+   display: block;
+   text-align: center;
+   background-color: var(--purple-dark);
+   color: var(--white);
+   text-align: center;
+   align-self: center;
+   padding: 10px;
+   border-radius: 5px;
+   border: 1px solid transparent;
 }
 
+a:hover {
+   background-color: var(--black);
+   color: var(--white);
+   border: 1px solid var(--white);
+}
 .profile-description {
-  justify-self: center;
-  align-self: center;
-  text-align: center;
-  font-size: 1.2em;
+   justify-self: center;
+   align-self: center;
+   text-align: center;
+   font-size: 1.2em;
 }
 
-.add-fav{
-  display: block;
-  margin-top: 20px;
+.add-fav {
+   display: block;
+   background-color: var(--white);
+   align-self: center;
+   padding: 10px;
+   border-radius: 5px;
+   border: none;
+   cursor: pointer;
+}
+
+.add-fav:hover {
+   background-color: var(--black);
+   color: var(--white);
+   border: 1px solid var(--white);
+   transform: scale(1.06);
+}
+
+.logout-bar {
+   display: grid;
+   grid-template-columns: auto auto;
+   justify-content: space-around;
+}
+
+.log-out {
+   background-color: var(--black);
+   border: 1px solid var(--purple-dark);
+   border-radius: 2px;
+   color: var(--white);
+   padding: 5px;
+   cursor: pointer;
+   height: 3vh;
+   width: 5rem;
+}
+
+.log-out:hover {
+   background-color: var(--purple-dark);
+}
+
+.userId {
+   background-color: var(--black);
+   border: none;
+   color: var(--white);
+   padding: 5px;
+   height: 3vh;
 }
